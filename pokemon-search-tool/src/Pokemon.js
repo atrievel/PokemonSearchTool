@@ -20,7 +20,7 @@ export const PokemonCardList = ({searchQuery}) => {
     // filter by name, id, or type(s)
     const filteredData = PokemonData.filter((p) => {
         return p.name.english.toLowerCase().includes(String(searchQuery).toLowerCase()) ||
-            p.id.toString().includes(String(searchQuery)) ||
+            p.id.toString().startsWith(String(searchQuery)) ||
             p.type.join(', ').trimEnd(', ').toLowerCase().includes(String(searchQuery).toLowerCase());
     });
 
